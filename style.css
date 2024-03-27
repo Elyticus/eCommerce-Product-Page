@@ -1,83 +1,168 @@
+/* Google Font Link */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+
+:root {
+  /* Primary Colors */
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+
+  /* Neutral Colors */
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  /* with 75% opacity for lightbox background */
+  --Black: hsl(0, 0%, 0%);
+}
+
+/* Moble Design____________________________________________________ */
+
 body {
   margin: 0;
+  padding-top: 1em;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-  height: 100vh;
-  width: 70%;
-  background-color: rgb(255, 172, 63);
-}
-
-header {
+header,
+.util,
+.options {
   display: flex;
-  align-items: center;
   justify-content: space-around;
 }
 
-.util {
-  display: flex;
-}
-
-.menu {
+header {
   position: relative;
-  display: none;
+  margin: 0 auto;
+  border: none;
 }
 
-.close-btn {
-  display: none;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 5;
+.util {
+  gap: 1em;
+  align-items: center;
 }
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.options {
-  display: flex;
-  align-items: center;
-}
-
-.head_cartShop {
   display: none;
 }
 
-.body_cartShop {
+.menu_style {
+  position: absolute;
+  top: -17px;
+  left: 0px;
+  width: 70%;
+  height: 100vh;
+  background-color: aqua;
+  padding-top: 2em;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 700;
+}
+
+.menu_items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-top: 2em;
+  gap: 1.3em;
+}
+
+.menu-btn,
+.close-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.close-btn {
+  padding-left: 40px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.menu_cartShop {
   display: none;
 }
 
 .avatar-navbar {
-  width: 50px;
+  width: 30px;
 }
 
-@media (min-width: 488px) {
-  .navbar {
-    position: initial;
+.options {
+  align-items: center;
+  gap: 1.5em;
+}
+
+.item_link {
+  text-decoration: none;
+  color: var(--Very-dark-blue);
+}
+
+/* Desktop Design_________________________________________________ */
+
+@media (min-width: 835px) {
+  body {
+    padding-top: 2em;
   }
 
-  ul {
+  header,
+  .util,
+  .options {
+    justify-content: space-between;
+  }
+
+  header {
+    border-bottom: 1px solid rgba(181, 181, 181, 0.341);
+    width: 80%;
+    padding-bottom: 1.7em;
+  }
+
+  .navbar {
     display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: initial;
-    background-color: transparent;
-    width: 0;
-    height: 0;
+  }
+
+  .menu_items {
+    flex-direction: row;
+    padding-top: 0;
+    gap: 1em;
+  }
+
+  .close-btn {
+    display: none;
   }
 
   .menu-btn {
     display: none;
+  }
+
+  .util {
+    display: block;
+  }
+
+  .menu_style {
+    left: 150px;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    font-weight: 400;
+  }
+
+  .item_link {
+    color: var(--Dark-grayish-blue);
+  }
+
+  main {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 5%;
+    margin: 0 auto;
+  }
+
+  .hero-image-main {
+    border-radius: 10px;
   }
 }

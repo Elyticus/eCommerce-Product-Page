@@ -1,12 +1,15 @@
-const menuNavbar = document.getElementById("menu-navbar");
-const menuList = document.getElementById("menuNavbar");
+const menuNavbar = document.getElementById("menuNavbar");
 const closeButton = document.getElementById("closeBtn");
+const menuList = document.getElementById("menuList");
+const navBar = document.getElementById("navBar");
 
 menuNavbar.addEventListener("click", () => {
-  closeButton.classList.toggle("close-btn");
-  menuList.classList.toggle("menu");
+  // closeButton.classList.toggle("close_btn");
+  // menuList.classList.toggle("menu_items");
+
+  navBar.classList.toggle("navbar");
 });
 
 closeButton.addEventListener("click", () => {
-  menuList.classList.toggle("menu");
+  navBar.classList.toggle("navbar");
 });
