@@ -156,6 +156,7 @@ li {
   main {
     width: 80%;
     display: flex;
+    justify-content: space-around;
     align-items: center;
     padding-top: 5%;
     margin: 0 auto;
