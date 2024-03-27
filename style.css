@@ -156,13 +156,24 @@ li {
   main {
     width: 80%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     padding-top: 5%;
     margin: 0 auto;
   }
 
   .hero-image-main {
+    border-radius: 10px;
+  }
+
+  .thumbnail-container {
+    padding-top: 1.7em;
+    width: 65%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .thumbnail-image {
+    width: 70%;
     border-radius: 10px;
   }
 }
