@@ -55,7 +55,7 @@ header {
 }
 
 .menu_style {
-  position: absolute;
+  position: fixed;
   top: -13px;
   left: 0px;
   width: 70%;
