@@ -20,7 +20,8 @@
 
 body {
   margin: 0;
-  padding-top: 1em;
+  /* padding-top: 1em; */
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 header,
@@ -34,6 +35,14 @@ header {
   position: relative;
   margin: 0 auto;
   border: none;
+  padding: 1em 0;
+}
+
+.isBlur header > *:not(nav),
+.isBlur main > *:not(nav) {
+  filter: blur(7px);
+  pointer-events: none;
+  user-select: none;
 }
 
 .util {
@@ -50,11 +59,12 @@ header {
   top: -17px;
   left: 0px;
   width: 70%;
-  height: 100vh;
-  background-color: aqua;
+  height: 240vh;
+  background-color: #f1d7b3;
   padding-top: 2em;
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 700;
+  z-index: 99;
 }
 
 .menu_items {
@@ -99,11 +109,116 @@ li {
   color: var(--Very-dark-blue);
 }
 
+.thumbnail-container {
+  display: none;
+}
+
+.product_subtitle {
+  color: var(--Orange);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.product_description {
+  color: var(--Dark-grayish-blue);
+  letter-spacing: 1px;
+  line-height: 25px;
+  font-size: 12px;
+}
+
+.discount_percentage {
+  color: var(--Orange);
+  background-color: var(--Pale-orange);
+  padding: 0.2em 0.6em;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.product_discount {
+  color: var(--Grayish-blue);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.product_quantity {
+  font-weight: 700;
+}
+
+.product-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--Light-grayish-blue);
+  border-radius: 10px;
+  padding: 0 1em;
+}
+
+.add-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.add_cart_btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  border: none;
+  background-color: var(--Orange);
+  color: var(--White);
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0px 12px 15px hsla(26, 100%, 55%, 0.467);
+}
+
+.minus_btn,
+.plus_btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: flex;
+}
+
+.price-details {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.product_title {
+  width: 100%;
+}
+
+.product_price,
+.product_title,
+.product_quantity {
+  color: var(--Very-dark-blue);
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details {
+  margin-inline: 1.5em;
+  margin-bottom: 7em;
+}
+
 /* Desktop Design_________________________________________________ */
 
 @media (min-width: 835px) {
   body {
-    padding-top: 2em;
+    padding-top: 1em;
   }
 
   header,
@@ -125,6 +240,7 @@ li {
   .menu_items {
     flex-direction: row;
     padding-top: 0;
+    margin: 0;
     gap: 1em;
   }
 
@@ -145,7 +261,6 @@ li {
     background-color: transparent;
     width: auto;
     height: auto;
-    padding-top: 0;
     font-weight: 400;
   }
 
@@ -156,10 +271,74 @@ li {
   main {
     width: 80%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 5%;
+    justify-content: space-evenly;
+    padding-top: 3.5%;
     margin: 0 auto;
+  }
+
+  .product-catalog {
+    width: 30%;
+  }
+
+  .details {
+    width: 45%;
+  }
+
+  .price-container {
+    display: block;
+  }
+
+  .product_description {
+    font-size: 1em;
+  }
+
+  .product_discount {
+    margin-top: 0;
+    margin-bottom: 3em;
+  }
+
+  .product_title {
+    width: 70%;
+  }
+
+  .add-cart {
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .product-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--Light-grayish-blue);
+    border-radius: 10px;
+    width: 130px;
+  }
+
+  .add_cart_btn {
+    width: 60%;
+    height: 50px;
+    box-shadow: none;
+  }
+
+  #minusBtn:hover use {
+    fill: #ffab6a;
+  }
+
+  #plusBtn:hover use {
+    fill: #ffab6a;
+  }
+
+  .isBlur header > *:not(nav),
+  .isBlur main > *:not(nav) {
+    filter: none;
+    pointer-events: initial;
+    user-select: initial;
+  }
+
+  .add_cart_btn:hover {
+    background-color: #ffab6a;
   }
 
   .hero-image-main {
@@ -168,9 +347,8 @@ li {
 
   .thumbnail-container {
     padding-top: 1.7em;
-    width: 65%;
+    width: 108%;
     display: flex;
-    justify-content: space-evenly;
   }
 
   .thumbnail-image {
