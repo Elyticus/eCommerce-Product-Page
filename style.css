@@ -56,10 +56,10 @@ header {
 
 .menu_style {
   position: absolute;
-  top: -17px;
+  top: -13px;
   left: 0px;
   width: 70%;
-  height: 240vh;
+  height: 140vh;
   background-color: #f1d7b3;
   padding-top: 2em;
   font-family: "Kumbh Sans", sans-serif;
@@ -214,6 +214,10 @@ li {
   margin-bottom: 7em;
 }
 
+.product-catalog {
+  width: 100%;
+}
+
 /* Desktop Design_________________________________________________ */
 
 @media (min-width: 835px) {
@@ -288,6 +292,10 @@ li {
     display: block;
   }
 
+  .image_container {
+    width: 100%;
+  }
+
   .product_description {
     font-size: 1em;
   }
@@ -347,12 +355,12 @@ li {
 
   .thumbnail-container {
     padding-top: 1.7em;
-    width: 108%;
     display: flex;
+    justify-content: space-between;
   }
 
   .thumbnail-image {
-    width: 70%;
+    width: 20%;
     border-radius: 10px;
   }
 }
