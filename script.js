@@ -2,6 +2,8 @@ const menuNavbar = document.getElementById("menuNavbar");
 const closeButton = document.getElementById("closeBtn");
 const menuList = document.getElementById("menuList");
 const navBar = document.getElementById("navBar");
+const cartButton = document.getElementById("cartNavbar");
+const cartMenu = document.getElementById("cartAddButtonNavbar");
 
 menuNavbar.addEventListener("click", () => {
   document.body.classList.toggle("isBlur");
@@ -11,4 +13,8 @@ menuNavbar.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   navBar.classList.toggle("navbar");
   document.body.classList.toggle("isBlur");
+});
+
+cartButton.addEventListener("click", () => {
+  cartMenu.classList.toggle("cart-container");
 });
