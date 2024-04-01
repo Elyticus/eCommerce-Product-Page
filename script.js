@@ -14,11 +14,13 @@ const nextButton = document.getElementById("arrowNext");
 menuNavbar.addEventListener("click", () => {
   document.body.classList.toggle("isBlur");
   navBar.classList.toggle("navbar");
+  productSection.style.zIndex = "-99";
 });
 
 closeButton.addEventListener("click", () => {
   navBar.classList.toggle("navbar");
   document.body.classList.toggle("isBlur");
+  productSection.style.zIndex = "99";
 });
 
 cartButton.addEventListener("click", () => {
