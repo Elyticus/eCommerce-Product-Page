@@ -266,11 +266,25 @@ li {
   fill: black;
 }
 
+.pictures_container {
+  display: none;
+}
+
+.picture_catalog {
+  width: 150%;
+}
+
+.products {
+  display: none;
+}
+
 /* Desktop Design_________________________________________________ */
 
 @media (min-width: 835px) {
   body {
+    position: relative;
     padding-top: 1em;
+    overflow-y: hidden;
   }
 
   header,
@@ -409,6 +423,7 @@ li {
   }
 
   .thumbnail-container {
+    position: relative;
     padding-top: 1.7em;
     display: flex;
     justify-content: space-between;
@@ -434,5 +449,82 @@ li {
   .menu_cartShop {
     top: 40px;
     right: -120px;
+  }
+
+  .pictures_container {
+    display: none;
+  }
+
+  /* Slider____________________________________________ */
+
+  .pictures_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .product_wrapper {
+    display: none;
+  }
+
+  .picture_catalog {
+    display: none;
+    width: 40%;
+    padding-top: 6em;
+  }
+
+  .slider_type {
+    position: relative;
+    display: none;
+    width: 25%;
+    margin: 0 auto;
+    padding-bottom: 10em;
+  }
+
+  .image_preview_wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .products {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: hsla(218, 12%, 13%, 0.867);
+    z-index: 999;
+  }
+
+  .close_products_button {
+    cursor: pointer;
+    position: absolute;
+    top: -520px;
+    left: 420px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .arrow_prev,
+  .arrow_next {
+    cursor: pointer;
+    display: none;
+    background-color: transparent;
+    border: none;
+  }
+
+  .arrow_back,
+  .arrow_up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--White);
+    padding: 0.7em;
+    border-radius: 50%;
+    margin: 0;
   }
 }
