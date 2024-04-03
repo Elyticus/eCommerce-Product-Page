@@ -297,9 +297,10 @@ li {
   position: absolute;
   top: 50%;
   left: 5%;
-  background-color: transparent;
   cursor: pointer;
   border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
 }
 
 .arrow_next {
@@ -307,8 +308,9 @@ li {
   top: 50%;
   left: 85%;
   cursor: pointer;
-  background-color: transparent;
   border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
 }
 
 .arrow_back,
@@ -559,5 +561,17 @@ li {
     top: 40%;
     left: 64.8%;
     z-index: 999;
+  }
+
+  .display_items {
+    display: none;
+    position: absolute;
+    top: -100%;
+    left: 60%;
+    background-color: orange;
+    padding: 0.1em 0.6em;
+    font-size: 14px;
+    border-radius: 40%;
+    color: white;
   }
 }
