@@ -10,6 +10,13 @@ const pictures = document.querySelectorAll(".picture_catalog");
 const sliderType = document.getElementById("sliderType");
 const prevButton = document.getElementById("arrowPrev");
 const nextButton = document.getElementById("arrowNext");
+const productQuantity = document.getElementById("productQuantity");
+const plusButton = document.getElementById("plusBtn");
+const minusButton = document.getElementById("minusBtn");
+const addCartButton = document.getElementById("addCartButton");
+const cartMessage = document.getElementById("cartMessage");
+const cartNav = document.getElementById("displayCartProduct");
+const displayCartItems = document.querySelector(".display_items");
 
 menuNavbar.addEventListener("click", () => {
   document.body.classList.toggle("isBlur");
@@ -74,14 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Add to cart function____________________________________________________
 
-const productQuantity = document.getElementById("productQuantity");
-const plusButton = document.getElementById("plusBtn");
-const minusButton = document.getElementById("minusBtn");
-const addCartButton = document.getElementById("addCartButton");
-const cartMessage = document.getElementById("cartMessage");
-const cartNav = document.getElementById("displayCartProduct");
-const displayCartItems = document.querySelector(".display_items");
-
 let quantity = 0;
 
 productQuantity.innerText = "0";
@@ -106,5 +105,8 @@ addCartButton.addEventListener("click", () => {
     cartMessage.innerText = quantity.toString();
     cartNav.innerText = quantity.toString();
     displayCartItems.style.display = "block";
+  } else {
+    displayCartItems.style.display = "none";
+    cartMessage.innerText = "Your Cart is empty";
   }
 });

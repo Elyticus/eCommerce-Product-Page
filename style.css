@@ -320,6 +320,18 @@ li {
   border-radius: 50%;
 }
 
+.display_items {
+  display: none;
+  position: absolute;
+  top: -100%;
+  left: 60%;
+  background-color: var(--Orange);
+  padding: 0.1em 0.6em;
+  font-size: 14px;
+  border-radius: 40%;
+  color: white;
+}
+
 /* Desktop Design_________________________________________________ */
 
 @media (min-width: 835px) {
@@ -561,17 +573,5 @@ li {
     top: 40%;
     left: 64.8%;
     z-index: 999;
-  }
-
-  .display_items {
-    display: none;
-    position: absolute;
-    top: -100%;
-    left: 60%;
-    background-color: orange;
-    padding: 0.1em 0.6em;
-    font-size: 14px;
-    border-radius: 40%;
-    color: white;
   }
 }
