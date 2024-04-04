@@ -1,6 +1,7 @@
+import data from "./data.js";
+
 const menuNavbar = document.getElementById("menuNavbar");
 const closeButton = document.getElementById("closeBtn");
-const menuList = document.getElementById("menuList");
 const navBar = document.getElementById("navBar");
 const cartButton = document.getElementById("cartNavbar");
 const cartMenu = document.getElementById("cartAddButtonNavbar");
@@ -17,6 +18,8 @@ const addCartButton = document.getElementById("addCartButton");
 const cartMessage = document.getElementById("cartMessage");
 const cartNav = document.getElementById("displayCartProduct");
 const displayCartItems = document.querySelector(".display_items");
+const thumbnailButtons = document.querySelectorAll(".thumbnail-image-button");
+const thumbnailSlider = document.querySelectorAll(".slider");
 
 menuNavbar.addEventListener("click", () => {
   document.body.classList.toggle("isBlur");
@@ -33,20 +36,6 @@ closeButton.addEventListener("click", () => {
 cartButton.addEventListener("click", () => {
   cartMenu.classList.toggle("cart-container");
 });
-
-function showImage(index) {
-  pictures.forEach((picture, i) => {
-    if (i === index) {
-      picture.style.display = "block";
-      sliderType.style.display = "block";
-      productSection.style.display = "block";
-      nextButton.style.display = "block";
-      prevButton.style.display = "block";
-    } else {
-      picture.style.display = "none";
-    }
-  });
-}
 
 closePictureBtn.addEventListener("click", () => {
   productSection.style.display = "none";
@@ -67,17 +56,34 @@ document.addEventListener("DOMContentLoaded", function () {
     currentIndex = (currentIndex + 1) % pictures.length; // Calculate the new index
     showImage(currentIndex); // Show the image at the new index
   });
-
-  // Function to show the image at a specific index
-  function showImage(index) {
-    // Hide all images
-    pictures.forEach(function (img) {
-      img.style.display = "none";
-    });
-    // Show the image at the given index
-    pictures[index].style.display = "block";
-  }
 });
+
+// Add event listener to each button
+thumbnailButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    showImage(index);
+  });
+});
+
+thumbnailSlider.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    showImage(index);
+  });
+});
+
+function showImage(index) {
+  pictures.forEach((picture, i) => {
+    if (i === index) {
+      picture.style.display = "block";
+      sliderType.style.display = "block";
+      productSection.style.display = "block";
+      nextButton.style.display = "block";
+      prevButton.style.display = "block";
+    } else {
+      picture.style.display = "none";
+    }
+  });
+}
 
 // Add to cart function____________________________________________________
 
@@ -101,12 +107,37 @@ minusButton.addEventListener("click", () => {
 });
 
 addCartButton.addEventListener("click", () => {
+  const { img, title, price, deleteBtn } = data;
+
   if (quantity > 0) {
-    cartMessage.innerText = quantity.toString();
+    cartMessage.style.marginTop = 0;
+    cartMessage.innerHTML = `
+     <div class="cart_info">
+     <img class="cart_info_image" src=${img} />
+     <div>
+     <p class="cart_product_title">${title}</p>
+     <div class="cart_product_price"><p>
+       $${price} x ${quantity.toString()} <span class="total">$
+       ${(price * quantity).toFixed(2)}
+       </span>
+     </p>
+
+     <img id="deleteBtn" class="delete_btn" src=${deleteBtn} />
+    </div>
+     </div>
+     </div>
+     <button class="checkout_btn">Checkout</button>
+     `;
     cartNav.innerText = quantity.toString();
     displayCartItems.style.display = "block";
-  } else {
-    displayCartItems.style.display = "none";
-    cartMessage.innerText = "Your Cart is empty";
+
+    const deleteCartBtn = document.getElementById("deleteBtn");
+
+    deleteCartBtn.addEventListener("click", () => {
+      cartMessage.innerText = "Your Cart is empty";
+      displayCartItems.style.display = "none";
+      updateQuantity(-quantity);
+      cartMessage.style.marginTop = "3em";
+    });
   }
 });
