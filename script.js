@@ -89,7 +89,7 @@ function showImage(index) {
 
 let quantity = 0;
 
-productQuantity.innerText = "0";
+productQuantity.innerText = quantity;
 
 function updateQuantity(value) {
   quantity += value;
@@ -128,8 +128,10 @@ addCartButton.addEventListener("click", () => {
      </div>
      <button class="checkout_btn">Checkout</button>
      `;
+
     cartNav.innerText = quantity.toString();
     displayCartItems.style.display = "block";
+    updateQuantity(-quantity);
 
     const deleteCartBtn = document.getElementById("deleteBtn");
 
